@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.bige0.shadowsocksr">
+    package="com.ssrlive.ssrdroid">
 
     <application
-        android:name="com.bige0.shadowsocksr.ShadowsocksApplication"
+        android:name=".ShadowsocksApplication"
         android:allowBackup="true"
         android:banner="@drawable/ic_start_connected"
         android:hardwareAccelerated="true"
@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name="com.bige0.shadowsocksr.Shadowsocks"
+            android:name=".Shadowsocks"
             android:label="@string/app_name"
             android:launchMode="singleTask">
             <intent-filter>
@@ -34,30 +34,30 @@
                 android:resource="@xml/shortcuts" />
         </activity>
         <activity
-            android:name="com.bige0.shadowsocksr.ShadowsocksRunnerActivity"
+            android:name=".ShadowsocksRunnerActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:taskAffinity=""
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <activity
-            android:name="com.bige0.shadowsocksr.ProfileManagerActivity"
+            android:name=".ProfileManagerActivity"
             android:excludeFromRecents="true"
             android:label="@string/profiles"
             android:launchMode="singleTask"
-            android:parentActivityName="com.bige0.shadowsocksr.Shadowsocks">
+            android:parentActivityName=".Shadowsocks">
             <intent-filter>
-                <action android:name="com.bige0.shadowsocksr.ProfileManagerActivity" />
+                <action android:name=".ProfileManagerActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.bige0.shadowsocksr.intent.action.SORT" />
+                <action android:name="com.ssrlive.ssrdroid.intent.action.SORT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.bige0.shadowsocksr.intent.action.SCAN" />
+                <action android:name="com.ssrlive.ssrdroid.intent.action.SCAN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -93,38 +93,38 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.bige0.shadowsocksr.ScannerActivity"
+            android:name=".ScannerActivity"
             android:excludeFromRecents="true"
             android:label="@string/add_profile_methods_scan_qr_code"
-            android:parentActivityName="com.bige0.shadowsocksr.ProfileManagerActivity" />
+            android:parentActivityName=".ProfileManagerActivity" />
         <activity
-            android:name="com.bige0.shadowsocksr.AppManager"
+            android:name=".AppManager"
             android:excludeFromRecents="true"
             android:label="@string/proxied_apps"
             android:launchMode="singleTask"
-            android:parentActivityName="com.bige0.shadowsocksr.Shadowsocks" />
+            android:parentActivityName=".Shadowsocks" />
         <activity
-            android:name="com.bige0.shadowsocksr.TaskerActivity"
+            android:name=".TaskerActivity"
             android:icon="@mipmap/ic_launcher">
             <intent-filter>
                 <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.bige0.shadowsocksr.ShadowsocksQuickSwitchActivity"
+            android:name="com.ssrlive.ssrdroid.ShadowsocksQuickSwitchActivity"
             android:excludeFromRecents="true"
             android:label="@string/quick_switch"
             android:launchMode="singleInstance"
             android:taskAffinity=""
             android:theme="@style/PopupTheme.QuickSwitch">
             <intent-filter>
-                <action android:name="com.bige0.shadowsocksr.QUICK_SWITCH" />
+                <action android:name="com.ssrlive.ssrdroid.QUICK_SWITCH" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.bige0.shadowsocksr.QuickToggleShortcut"
+            android:name="com.ssrlive.ssrdroid.QuickToggleShortcut"
             android:excludeFromRecents="true"
             android:label="@string/quick_toggle"
             android:launchMode="singleTask"
@@ -140,7 +140,7 @@
             android:value="@integer/google_play_services_version" />
 
         <receiver
-            android:name="com.bige0.shadowsocksr.BootReceiver"
+            android:name="com.ssrlive.ssrdroid.BootReceiver"
             android:directBootAware="true"
             android:enabled="false">
             <intent-filter>
@@ -149,7 +149,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.bige0.shadowsocksr.TaskerReceiver"
+            android:name="com.ssrlive.ssrdroid.TaskerReceiver"
             tools:ignore="ExportedReceiver">
             <intent-filter>
                 <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING" />
@@ -164,10 +164,10 @@
             android:process=":bg" />
 
         <service
-            android:name="com.bige0.shadowsocksr.ShadowsocksRunnerService"
+            android:name="com.ssrlive.ssrdroid.ShadowsocksRunnerService"
             android:exported="false" />
         <service
-            android:name="com.bige0.shadowsocksr.ShadowsocksVpnService"
+            android:name="com.ssrlive.ssrdroid.ShadowsocksVpnService"
             android:exported="false"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_VPN_SERVICE"
@@ -177,7 +177,7 @@
             </intent-filter>
         </service>
         <service
-            android:name="com.bige0.shadowsocksr.ShadowsocksTileService"
+            android:name="com.ssrlive.ssrdroid.ShadowsocksTileService"
             android:icon="@drawable/ic_start_connected"
             android:label="@string/quick_toggle"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"

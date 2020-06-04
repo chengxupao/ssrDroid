@@ -10,7 +10,7 @@ import com.ssrlive.ssrdroid.utils.*
 import java.io.*
 import java.util.*
 
-class ShadowsocksVpnService : com.ssrlive.ssrdroid.BaseVpnService()
+class ShadowsocksVpnService : BaseVpnService()
 {
 	companion object
 	{

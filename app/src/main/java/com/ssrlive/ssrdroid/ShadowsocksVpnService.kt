@@ -498,7 +498,7 @@ class ShadowsocksVpnService : BaseVpnService()
 
 		val fd = conn.fd
 
-		val cmd = arrayOf(applicationInfo.nativeLibraryDir + "/${Constants.Executable.TUN2SOCKS}", "--netif-ipaddr", String.format(Locale.ENGLISH, PRIVATE_VLAN, "2"), "--netif-netmask", "255.255.255.0", "--socks-server-addr", "127.0.0.1:" + profile!!.localPort, "--tunfd", fd.toString(), "--tunmtu", VPN_MTU.toString(), "--sock-path", applicationInfo.dataDir + "/sock_path", "--loglevel", "3")
+		val cmd = arrayOf(applicationInfo.nativeLibraryDir + "/${Constants.Executable.TUN2SOCKS}", "--netif-ipaddr", String.format(Locale.ENGLISH, PRIVATE_VLAN, "2"), "--netif-netmask", "255.255.255.0", "--socks-server-addr", "127.0.0.1:" + profile!!.localPort, "--tunmtu", VPN_MTU.toString(), "--sock-path", applicationInfo.dataDir + "/sock_path", "--loglevel", "3")
 
 		val cmds = cmd.toMutableList()
 
